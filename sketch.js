@@ -12,7 +12,7 @@ var generate;
 var frame=null;
 
 function setup() {
-  createCanvas(displayWidth,displayHeight);
+  createCanvas(2000,2000);
 
   generate = createButton("Generate");
   generate.position(140,500);
