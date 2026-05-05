@@ -14,8 +14,10 @@ var frame=null;
 function setup() {
   createCanvas(2000,2000);
 
+  textAlign(CENTER);
+
   generate = createButton("Generate");
-  generate.position(140,500);
+  generate.position(450,1700);
 }
 
 function draw() {
@@ -43,24 +45,24 @@ function draw() {
   for(let i=1;i<=90;i++) {
     if (numbers.includes(i)) {
       fill(0);
-      textSize(20);
-      text(i,20+((i-1)%10)*40,100+floor((i-1)/10)*40);
+      textSize(50);
+      text(i,50+((i-1)%10)*80,100+floor((i-1)/10)*80);
     }else {
      fill(255);
-     textSize(20);
-     text(i,20+((i-1)%10)*40,100+floor((i-1)/10)*40);
+     textSize(50);
+     text(i,50+((i-1)%10)*80,100+floor((i-1)/10)*80);
     }
   }
 
   if(currentNumber!=null) {
     fill(0);
-    textSize(50);
-    text(currentNumber,750,250);
+    textSize(100);
+    text(currentNumber,450,1500);
   }
 
   if(lastNumber!=null) {
     fill(0);
-    textSize(30);
-    text(lastNumber,600,250);
+    textSize(80);
+    text(lastNumber,300,1500);
   }
 }
