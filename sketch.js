@@ -10,6 +10,7 @@ var numbers=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
 var lastNumber=null,currentNumber=null;
 var generate;
 var frame=null;
+var fr = 30;
 
 function setup() {
   createCanvas(2000,2000);
@@ -17,20 +18,20 @@ function setup() {
   textAlign(CENTER);
 
   generate = createButton("Generate");
-  generate.position(450,1700);
+  generate.position(350,1300);
+  generate.style("font-size","xx-large");
 }
 
 function draw() {
   background(100);
 
-  frameRate(60);
+  frameRate(fr);
 
-  console.log(frameCount);
+  console.log(frameRate());
 
   generate.mousePressed(()=>{
     generate.hide();
     frame = frameCount;
-    console.log(frame);
     let selectedIndex = round(random(0,(numbers.length)-1));
     let selectedNumber = numbers[selectedIndex];
     lastNumber=currentNumber;
@@ -38,7 +39,7 @@ function draw() {
     numbers.splice(selectedIndex, 1);
   });
 
-  if(frame!=null && frameCount==(frame+600)) {
+  if(frame!=null && frameCount==(frame+(10*fr))) {
     generate.show();
   }
 
@@ -57,12 +58,12 @@ function draw() {
   if(currentNumber!=null) {
     fill(0);
     textSize(100);
-    text(currentNumber,450,1500);
+    text(currentNumber,400,1100);
   }
 
   if(lastNumber!=null) {
     fill(0);
-    textSize(80);
-    text(lastNumber,300,1500);
+    textSize(70);
+    text(lastNumber,200,1100);
   }
 }
