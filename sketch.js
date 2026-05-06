@@ -39,7 +39,7 @@ function draw() {
     numbers.splice(selectedIndex, 1);
   });
 
-  if(frame!=null && frameCount==(frame+(10*fr))) {
+  if(frame!=null && frameCount==(frame+(5*fr))) {
     generate.show();
   }
 
